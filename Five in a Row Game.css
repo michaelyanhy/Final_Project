@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(to left, #ffd194, #70e1f5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Roboto', 'Oswald', sans-serif;
+}
+
+header {
+text-align: center;
+}
+
+.thetitle {
+    font-size: 3rem;
+    color: #9d50bb;
+    margin-bottom: 2rem;
+}
+
+.Move {
+    font-size: 2rem;
+    color:#e74c3c;
+}
+
+main {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+}
+
+canvas {
+    border: 1px solid #000;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+footer {
+    margin: 0px;
+    padding: 1rem;
+}
+
+.Thankyou {
+    text-align: center;
+}
+
+.copyright {
+    font-size: 12px;
+}
