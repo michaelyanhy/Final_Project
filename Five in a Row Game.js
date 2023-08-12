@@ -48,6 +48,7 @@
             const y = Math.floor(e.offsetY / CELL_SIZE);
             if (chessBoard[x][y] === 0) {
                 chessBoard[x][y] = isBlack ? 1 : 2; // 1 means Black，2 means White
+                WhosMove.innerHTML = isBlack ? "It's White" : "It's Black";//If this move is Black, isBlack should be true, then it should display "It's White' move" to let the user know who's move next
                 drawChess(x, y, isBlack);
                 if (checkWin(x, y)) {
                     const winner = isBlack ? "Black" : "White";
@@ -56,12 +57,13 @@
                 }
                 isBlack = !isBlack;
             }
-            if (isBlack === false) {
-                WhosMove.innerHTML = "It's White";
-            }
-            else {
-                WhosMove.innerHTML = "It's Black";
-            }
+            //Another way to let the user know who's move next
+            // if (isBlack === false) {
+            //     WhosMove.innerHTML = "It's White";
+            // }
+            // else {
+            //     WhosMove.innerHTML = "It's Black";
+            // }
         };
 
 // detemine is there a winner
