@@ -64,5 +64,34 @@
             }
         };
 
+// detemine is there a winner
+        function checkWin(x, y) {
+            const chessType = chessBoard[x][y];
+            const directions = [[1, 0], [0, 1], [1, 1], [1, -1]]; // 4 directions
+            for (const [dx, dy] of directions) {
+                let count = 1;
+                for (let i = 1; i < 5; i++) {
+                    const newRow = x + i * dx;
+                    const newCol = y + i * dy;
+                    if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
+                        return ture;
+                    }
+                    count++;
+                }
+                for (let i = 1; i < 5; i++) {
+                    const newRow = x - i * dx;
+                    const newCol = y - i * dy;
+                    if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
+                        return ture;
+                    }
+                    count++;
+                }
+                if (count >= 5) {
+                    return ture;
+                }
+            }
+            return false;
+        }
+
         // draw the chessboard
         drawBoard();
