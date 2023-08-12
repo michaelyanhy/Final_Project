@@ -1,62 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Five in a Row Game</title>
-<style>
-    body {
-        background-color: blanchedalmond;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh; /* make the background fill the whole window */
-    }
-    canvas {
-        border: 1px solid #000;
-        max-width: 100%; /* limit the width of canvas */
-        max-height: 100%; /* limit the height of canvas */
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five in a Row Game</title>
+    <link rel="stylesheet" href="Five in a Row Game.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap">
 </head>
+
 <body>
-<div id="container">
-  <canvas id="chess" width="400" height="400"></canvas>
-</div>
-<script>
-  const canvas = document.getElementById('chess');
-  const ctx = canvas.getContext('2d');
-  const gridSize = 40; // Size of each grid cell
-  const rows = 10;
-  const cols = 10;
-  let currentPlayer = 'black'; // 'black' or 'white'
-  let board = new Array(rows).fill(null).map(() => new Array(cols).fill(null));
+    <header>
+        <div class="thetitle">Five In A Row</div>
+        <div class="Move">
+            <span id="WhosMove">It's Black</span>
+            <span>'s Move</span>
+        </div>
+    </header>
 
-  canvas.addEventListener('click', handleClick);
+    <main>
+        <!-- use canvas to draw the chessboard -->
+        <div id="container">
+            <canvas id="chess" width="400" height="400"></canvas>
+        </div>
+    </main>
 
-  function drawBoard() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        const x = col * gridSize;
-        const y = row * gridSize;
-        ctx.strokeRect(x, y, gridSize, gridSize);
-        if (board[row][col] == 'black') {
-          ctx.fillStyle = 'black';
-          ctx.beginPath();
-          ctx.arc(x + gridSize / 2, y + gridSize / 2, gridSize / 2 - 5, 0, Math.PI * 2);
-          ctx.fill();
-        } else if (board[row][col] == 'white') {
-          ctx.fillStyle = 'white';
-          ctx.beginPath();
-          ctx.arc(x + gridSize / 2, y + gridSize / 2, gridSize / 2 - 5, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-    }
-  }
-    drawBoard();
-</script>
+    <footer>
+        <p class="Thankyou">Thanks to all the teachers and colleagues who have guided me throughout my learning journey.
+        </p>
+
+        <div class="copyright">Copyright </div>
+    </footer>
+    <script src="Five in a Row Game.js"></script>
 </body>
+
 </html>
