@@ -74,7 +74,7 @@
                     const newRow = x + i * dx;
                     const newCol = y + i * dy;
                     if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
-                        return ture;
+                        return false;
                     }
                     count++;
                 }
@@ -82,7 +82,7 @@
                     const newRow = x - i * dx;
                     const newCol = y - i * dy;
                     if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
-                        return ture;
+                        return false;
                     }
                     count++;
                 }
@@ -90,7 +90,6 @@
                     return ture;
                 }
             }
-            return false;
         }
 
         // draw the chessboard
