@@ -1,4 +1,5 @@
-// Get the canvas element and its drawing context
+
+        // Get the canvas element and its drawing context
         const chess = document.getElementById("chess");
         const context = chess.getContext("2d");
         var WhosMove = document.querySelector("#WhosMove");
@@ -41,7 +42,36 @@
             context.fill();
         }
 
-// listen to chess move event
+        // detemine is there a winner
+        function checkWin(x, y) {
+            const chessType = chessBoard[x][y];
+            const directions = [[1, 0], [0, 1], [1, 1], [1, -1]]; // 4 directions
+            for (const [dx, dy] of directions) {
+                let count = 1;
+                for (let i = 1; i < 5; i++) {
+                    const newRow = x + i * dx;
+                    const newCol = y + i * dy;
+                    if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
+                        break;
+                    }
+                    count++;
+                }
+                for (let i = 1; i < 5; i++) {
+                    const newRow = x - i * dx;
+                    const newCol = y - i * dy;
+                    if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
+                        break;
+                    }
+                    count++;
+                }
+                if (count >= 5) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // listen to chess move event
         chess.onclick = function(e) {
             if (gameOver) return;
             const x = Math.floor(e.offsetX / CELL_SIZE);
@@ -65,34 +95,6 @@
             //     WhosMove.innerHTML = "It's Black";
             // }
         };
-
-// detemine is there a winner
-        function checkWin(x, y) {
-            const chessType = chessBoard[x][y];
-            const directions = [[1, 0], [0, 1], [1, 1], [1, -1]]; // 4 directions
-            for (const [dx, dy] of directions) {
-                let count = 1;
-                for (let i = 1; i < 5; i++) {
-                    const newRow = x + i * dx;
-                    const newCol = y + i * dy;
-                    if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
-                        return false;
-                    }
-                    count++;
-                }
-                for (let i = 1; i < 5; i++) {
-                    const newRow = x - i * dx;
-                    const newCol = y - i * dy;
-                    if (newRow < 0 || newRow >= ROWS || newCol < 0 || newCol >= ROWS || chessBoard[newRow][newCol] !== chessType) {
-                        return false;
-                    }
-                    count++;
-                }
-                if (count >= 5) {
-                    return ture;
-                }
-            }
-        }
 
         // draw the chessboard
         drawBoard();
