@@ -68,10 +68,17 @@ button {
 @keyframes roll {
     0% {
       transform: rotate(0);
+      width: 100%;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        width: 5%;
     }
 
     100% {
       transform: rotate(360deg);
+      width: 100%;
     }
   }
 
