@@ -134,6 +134,7 @@ const backgroundMusic = document.querySelector("#backgroundMusic");
 const musicButton = document.querySelector("#musicButton");
 let musicStatus = false;
 musicButton.addEventListener("click", () => {
+    //Use 'if' might be easier here, just want to have a try on switch
     switch (musicStatus) {
         case true:
             backgroundMusic.pause();
@@ -143,7 +144,7 @@ musicButton.addEventListener("click", () => {
         case false:
             backgroundMusic.play();
             musicStatus =!musicStatus;
-            musicButton.innerHTML = "Pause Music";
+            musicButton.innerHTML = "Stop Music";
             break;
     }
 });
