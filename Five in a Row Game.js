@@ -1,8 +1,6 @@
 // Get the canvas element and its drawing context
 const chess = document.getElementById("chess");
 const context = chess.getContext("2d");
-let WhosMove = document.querySelector("#WhosMove");
-let restartButton = document.querySelector("#restartButton");
 const ROWS = 15; // Number of rows on the chessboard
 let chessBoard = []; // Record the chess pieces on the board
 let isBlack = true; // Indicates whether the current move is by Black or White
@@ -94,7 +92,9 @@ chess.onclick = function (e) {
     }
 };
 
-//Change to move reminder
+//Change move reminder
+let WhosMove = document.querySelector("#WhosMove");
+let restartButton = document.querySelector("#restartButton");
 function moveReminder() {
     WhosMove.innerHTML = isBlack ? "White's" : "Black's"; //If this move is Black, isBlack should be true, then it should display "It's White' move" to let the user know who's move next
     WhosMove.setAttribute("class", "")
@@ -131,12 +131,19 @@ drawBoard();
 
 // Background Music Control
 const backgroundMusic = document.querySelector("#backgroundMusic");
-const playButton = document.querySelector("#playButton");
-const pauseButton = document.querySelector("#pauseButton");
-backgroundMusic.play();
-playButton.addEventListener("click", () => {
-    backgroundMusic.play();
-});
-pauseButton.addEventListener("click", () => {
-    backgroundMusic.pause();
+const musicButton = document.querySelector("#musicButton");
+let musicStatus = false;
+musicButton.addEventListener("click", () => {
+    switch (musicStatus) {
+        case true:
+            backgroundMusic.pause();
+            musicStatus =!musicStatus;
+            musicButton.innerHTML = "Play Music";
+            break;
+        case false:
+            backgroundMusic.play();
+            musicStatus =!musicStatus;
+            musicButton.innerHTML = "Pause Music";
+            break;
+    }
 });
