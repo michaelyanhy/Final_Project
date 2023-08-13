@@ -73,7 +73,7 @@ button {
 
     50% {
         transform: rotate(180deg);
-        width: 5%;
+        width: 3vh;
     }
 
     100% {
