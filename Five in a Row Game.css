@@ -68,7 +68,7 @@ button {
 @keyframes roll {
     0% {
       transform: rotate(0);
-      width: 70%;
+      width: 70vh;
     }
 
     50% {
@@ -78,7 +78,7 @@ button {
 
     100% {
       transform: rotate(360deg);
-      width: 70%;
+      width: 70vh;
     }
   }
 
