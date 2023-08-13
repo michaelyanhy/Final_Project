@@ -115,6 +115,10 @@ function restartGame() {
         initializeChessBoard();
         isBlack = true;
         gameOver = false;
+        chess.classList.add('rotating') // display an animation: roll the chessboard
+        setTimeout(() => {
+            chess.classList.remove('rotating');
+        }, 2000); // delay for 2s, then stop the animation
         drawBoard(); // Redraw the empty board
         console.log("Game Reset");
     }
