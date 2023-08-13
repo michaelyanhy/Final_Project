@@ -6,7 +6,7 @@ body {
 }
 
 header {
-text-align: center;
+    text-align: center;
 }
 
 .thetitle {
@@ -18,7 +18,7 @@ text-align: center;
 
 .Move {
     font-size: 2rem;
-    color:#e74c3c;
+    color: #e74c3c;
 }
 
 #WhosMove {
@@ -52,6 +52,20 @@ canvas {
     font-size: 1.2rem;
     padding: 0.5rem;
 }
+
+.rotating {
+    animation: roll 2s 1;
+}
+
+@keyframes roll {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 footer {
     margin: 0px;
