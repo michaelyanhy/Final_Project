@@ -88,7 +88,7 @@ chess.onclick = function (e) {
         drawChess(x, y, isBlack);
         if (checkWin(x, y)) {
             const winner = isBlack ? "Black" : "White";
-            alert(`${winner} is the winner! Thank you for playing. `);
+            alert(`\n ${winner} is the winner! \n \nThank you for playing. I hope you had fun.`);
             gameOver = true;
         }
         isBlack = !isBlack;
