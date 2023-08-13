@@ -128,3 +128,15 @@ restartButton.addEventListener('click', restartGame)
 
 // draw the chessboard
 drawBoard();
+
+// Background Music Control
+const backgroundMusic = document.querySelector("#backgroundMusic");
+const playButton = document.querySelector("#playButton");
+const pauseButton = document.querySelector("#pauseButton");
+backgroundMusic.play();
+playButton.addEventListener("click", () => {
+    backgroundMusic.play();
+});
+pauseButton.addEventListener("click", () => {
+    backgroundMusic.pause();
+});
