@@ -48,7 +48,10 @@ canvas {
     max-height: 100%;
 }
 
-
+#restartButton {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
 
 footer {
     margin: 0px;
