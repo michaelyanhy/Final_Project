@@ -122,13 +122,21 @@ function restartGame() {
         initializeChessBoard();
         isBlack = true;
         gameOver = false;
+
+        // display an animation: roll the chessboard
         if (narrowScreen) {
-            chess.classList.add('rotating2')
+            chess.classList.add('rotating2');
+            setTimeout(() => {
+                chess.classList.remove('rotating2');
+            }, 2000); // delay for 2s, then stop the animation
         }
-        else { chess.classList.add('rotating') } // display an animation: roll the chessboard
-        setTimeout(() => {
-            chess.setAttribute("class", "");
-        }, 2000); // delay for 2s, then stop the animation
+        else {
+            chess.classList.add('rotating');
+            setTimeout(() => {
+                chess.classList.remove('rotating');
+            }, 2000); // delay for 2s, then stop the animation
+        }
+
         drawBoard(); // Redraw the empty board
         console.log("Game Reset");
     }
