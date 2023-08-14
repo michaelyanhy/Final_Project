@@ -119,7 +119,6 @@ function moveReminder() {
 function restartGame() {
     const confirmed = confirm("Do you want to restart the game?");
     if (confirmed) {
-        initializeChessBoard();
         isBlack = true;
         gameOver = false;
 
@@ -137,7 +136,12 @@ function restartGame() {
             }, 2000); // delay for 2s, then stop the animation
         }
 
-        drawBoard(); // Redraw the empty board
+        // reset the chess board when it is minimized
+        setTimeout(() => {
+            initializeChessBoard();
+            drawBoard(); // Redraw the empty board
+        }, 1000);
+
         console.log("Game Reset");
     }
 }
