@@ -68,17 +68,17 @@ button {
 @keyframes roll {
     0% {
       transform: rotate(0);
-      width: 70vh;
+      width: calc(0.7 * min(100vh, 100vw));
     }
 
     50% {
         transform: rotate(180deg);
-        width: 3vh;
+        width: calc(0.05 * min(100vh, 100vw));
     }
 
     100% {
       transform: rotate(360deg);
-      width: 70vh;
+      width: calc(0.7 * min(100vh, 100vw));
     }
   }
 
