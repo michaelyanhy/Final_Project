@@ -13,6 +13,7 @@ header {
     font-family: Monoton;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 3rem;
+    letter-spacing: 0.1em;
     color: #9d50bb;
     margin-bottom: 1.5rem;
 }
@@ -98,7 +99,7 @@ footer {
 
 .Thankyou {
     text-align: center;
-    text-shadow: 2px 2px 4px rgb(243, 210, 210);
+    text-shadow: 2px 2px 4px rgb(224, 223, 223);
 }
 
 .copyright {
