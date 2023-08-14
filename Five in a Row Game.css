@@ -78,7 +78,7 @@ button {
 
     50% {
         transform: rotate(180deg);
-        width: calc(0.05 * min(100vh, 100vw));
+        width: calc(0.02 * min(100vh, 100vw));
     }
 
     100% {
