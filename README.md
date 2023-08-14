@@ -6,4 +6,8 @@ In the lastest version, I use onclick to listen to event.
 
 Have not uploaded the part that detemine who is the winner. There still something wrong within it.
 
+12/08 The program is working fine.
+
+13/08 Added a restart button and background music.
+
 14/08  changed some display style
