@@ -26,18 +26,12 @@ header {
 }
 
 .blackMove {
-    font-family: Barriecito;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: #000;
-    font-size: 2rem;
     font-weight: bold;
 }
 
 .whiteMove {
-    font-family: Barriecito;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 2rem;
     font-weight: bold;
 }
 
