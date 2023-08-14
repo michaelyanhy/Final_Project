@@ -7,7 +7,12 @@ let isBlack = true; // Indicates whether the current move is by Black or White
 let gameOver = false; // Indicates if the game is over
 
 // Calculate the size of each grid based on the screen size
-const CELL_SIZE = Math.min(window.innerWidth, window.innerHeight) * 0.7 / ROWS;
+let CELL_SIZE;
+if (window.innerWidth < (0.8 * window.innerHeight)) {
+    CELL_SIZE = window.innerWidth * 0.85 / ROWS;
+}
+else {CELL_SIZE = Math.min(window.innerWidth, window.innerHeight) * 0.7 / ROWS;}
+
 // Calculate the size of the chessboard based on the grid size
 const CHESS_SIZE = CELL_SIZE * ROWS;
 chess.width = CHESS_SIZE;
