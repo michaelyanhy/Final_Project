@@ -2,9 +2,9 @@ I want to create an interactive webpage that provides users with real-time feedb
 
 Will try to build a game without time controller. Use addEventListener function to catch user input.
 
-In the lastest version, I use onclick to listen to event.
+06/08 In the lastest version, I use onclick to listen to event.
 
-Have not uploaded the part that detemine who is the winner. There still something wrong within it.
+09/08 Have not uploaded the part that detemine who is the winner. There still something wrong within it.
 
 12/08 The program is working fine.
 
