@@ -98,7 +98,7 @@ let restartButton = document.querySelector("#restartButton");
 function moveReminder() {
     WhosMove.innerHTML = isBlack ? "White's" : "Black's"; //If this move is Black, isBlack should be true, then it should display "It's White' move" to let the user know who's move next
     WhosMove.setAttribute("class", "")
-    WhosMove.classList.add(isBlack ? 'whiteChess' : 'blackChess')
+    WhosMove.classList.add(isBlack ? 'whiteMove' : 'blackMove')
     //Another way to let the user know who's move next
     // if (isBlack === false) {
     //     WhosMove.innerHTML = "It's White";
