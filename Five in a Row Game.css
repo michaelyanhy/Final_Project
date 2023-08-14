@@ -10,27 +10,30 @@ header {
 }
 
 .thetitle {
+    font-family: Monoton;
     font-size: 3rem;
     color: #9d50bb;
-    margin-bottom: 2rem;
-    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
 .Move {
+    font-family: Barriecito;
     font-size: 2rem;
     color: #e74c3c;
 }
 
-#WhosMove {
+.blackMove {
+    font-family: Barriecito;
+    color: #000;
+    font-size: 2rem;
     font-weight: bold;
 }
 
-.blackChess {
-    color: #000;
-}
-
-.whiteChess {
+.whiteMove {
+    font-family: Barriecito;
     color: white;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 main {
@@ -56,6 +59,7 @@ canvas {
 }
 
 button {
+    font-family: Handjet;
     font-size: 1.2rem;
     padding: 0.5rem;
     margin: 0 0.5rem;
