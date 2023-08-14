@@ -65,14 +65,15 @@ button {
     margin: 0 0.5rem;
 }
 
+/* animation for normal screen */
 .rotating {
     animation: roll 2s 1;
 }
 
 @keyframes roll {
     0% {
-      transform: rotate(0);
-      width: calc(0.7 * min(100vh, 100vw));
+        transform: rotate(0);
+        width: calc(0.7 * min(100vh, 100vw));
     }
 
     50% {
@@ -81,10 +82,32 @@ button {
     }
 
     100% {
-      transform: rotate(360deg);
-      width: calc(0.7 * min(100vh, 100vw));
+        transform: rotate(360deg);
+        width: calc(0.7 * min(100vh, 100vw));
     }
-  }
+}
+
+/* animation for narrow screen */
+.rotating2 {
+    animation: roll2 2s 1;
+}
+
+@keyframes roll2 {
+    0% {
+        transform: rotate(0);
+        width: calc(0.85 * min(100vh, 100vw));
+    }
+
+    50% {
+        transform: rotate(180deg);
+        width: calc(0.05 * min(100vh, 100vw));
+    }
+
+    100% {
+        transform: rotate(360deg);
+        width: calc(0.85 * min(100vh, 100vw));
+    }
+}
 
 footer {
     margin: 0px;
