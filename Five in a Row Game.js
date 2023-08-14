@@ -8,10 +8,12 @@ let gameOver = false; // Indicates if the game is over
 
 // Calculate the size of each grid based on the screen size
 let CELL_SIZE;
+let narrowScreen = false;
 if (window.innerWidth < (0.8 * window.innerHeight)) {
     CELL_SIZE = window.innerWidth * 0.85 / ROWS;
+    narrowScreen = true;
 }
-else {CELL_SIZE = Math.min(window.innerWidth, window.innerHeight) * 0.7 / ROWS;}
+else { CELL_SIZE = Math.min(window.innerWidth, window.innerHeight) * 0.7 / ROWS; }
 
 // Calculate the size of the chessboard based on the grid size
 const CHESS_SIZE = CELL_SIZE * ROWS;
@@ -120,7 +122,10 @@ function restartGame() {
         initializeChessBoard();
         isBlack = true;
         gameOver = false;
-        chess.classList.add('rotating') // display an animation: roll the chessboard
+        if (narrowScreen) {
+            chess.classList.add('rotating2')
+        }
+        else { chess.classList.add('rotating') } // display an animation: roll the chessboard
         setTimeout(() => {
             chess.classList.remove('rotating');
         }, 2000); // delay for 2s, then stop the animation
@@ -143,12 +148,12 @@ musicButton.addEventListener("click", () => {
     switch (musicStatus) {
         case true:
             backgroundMusic.pause();
-            musicStatus =!musicStatus;
+            musicStatus = !musicStatus;
             musicButton.innerHTML = "Play Music";
             break;
         case false:
             backgroundMusic.play();
-            musicStatus =!musicStatus;
+            musicStatus = !musicStatus;
             musicButton.innerHTML = "Stop Music";
             break;
     }
