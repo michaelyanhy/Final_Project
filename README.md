@@ -10,4 +10,4 @@ Have not uploaded the part that detemine who is the winner. There still somethin
 
 13/08 Added a restart button and background music.
 
-14/08  changed some display style
+14/08 Changed some display style，Adjusting screen responsiveness for narrow-screen devices, primarily mobile phones.
