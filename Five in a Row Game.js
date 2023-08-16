@@ -26,9 +26,9 @@ function initializeChessBoard() {
         chessBoard[i] = [];
         for (let j = 0; j < ROWS; j++) {
             chessBoard[i][j] = 0; // 0 means no chess on the board
-            context.clearRect(0, 0, CHESS_SIZE, CHESS_SIZE); // Clear the canvas
         }
     }
+    context.clearRect(0, 0, CHESS_SIZE, CHESS_SIZE); // Clear the canvas
 }
 
 initializeChessBoard()
